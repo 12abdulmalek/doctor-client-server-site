@@ -127,6 +127,7 @@ app.get('/doctors',async(req,res)=>{
 app.post('/doctors', async (req,res)=>{
   const {name,specialist,gender,education,work_in,experience,fee} = req.body;
   const pic = req.files.image;
+  
   const picData = pic.data;
   const encodedPic = picData.toString('base64');
   const imageBuffer = Buffer.from(encodedPic, 'base64');
